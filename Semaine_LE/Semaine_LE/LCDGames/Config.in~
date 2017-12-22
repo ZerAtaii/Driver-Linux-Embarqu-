@@ -1,0 +1,4 @@
+config BR2_PACKAGE_LCDGAMES
+	bool LEDUSER
+		help
+			driver LCDGAMES

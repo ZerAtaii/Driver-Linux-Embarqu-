@@ -1,0 +1,4 @@
+config BR2_PACKAGE_LCDUSER
+	bool LCDUser
+		help
+			technologie avancee

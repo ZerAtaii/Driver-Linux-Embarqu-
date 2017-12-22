@@ -1,0 +1,23 @@
+#include <linux/kernel>
+#include <linux/module.h>
+#include <linux/gpio.h>
+
+static int __init fonctionInit(void) {
+	int val = gpio_request(0,"LED");
+	if (val == 0) {
+		gpio_direction_output(0,1);
+	}
+	return 0;
+}
+
+static void __exit fonctionExit(void) {
+	gpio_set_value(0, 0);
+	gpio_free(0);
+}
+
+module_init(fonctionInit);
+module_exit(fonctionExit);
+
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Nicolas Hell");
+MODULE_DESCRIPTION("GPIO");

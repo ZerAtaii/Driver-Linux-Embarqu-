@@ -1,0 +1,16 @@
+LCDGAMES_VERSION = 1.0
+LCDGAMES_SITE = $(TOPDIR)/package/LCDGames/driver
+LCDGAMES_SITE_METHOD = local
+LCDGAMES_LICENSE = GPLv3+
+
+LCDGAMES_DEPENDENCIES = linux
+
+define LCDGAMES_BUILD_CMDS
+	$(MAKE) -C $(LINUX_DIR) $(LINUX_MAKE_FLAGS) M=$(@D)
+endef
+
+define LCDGAMES_INSTALL_TARGET_CMDS
+	$(MAKE) -C $(LINUX_DIR) $(LINUX_MAKE_FLAGS) M=$(@D) modules_install
+endef
+
+$(eval $(generic-package))

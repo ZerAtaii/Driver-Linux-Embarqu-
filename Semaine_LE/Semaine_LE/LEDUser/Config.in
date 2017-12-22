@@ -1,0 +1,4 @@
+config BR2_PACKAGE_LEDUSER
+	bool LEDUSER
+		help
+			driver LEDUSER

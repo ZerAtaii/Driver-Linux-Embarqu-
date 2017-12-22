@@ -1,0 +1,4 @@
+config BR2_PACKAGE_LCDGAMES
+	bool LCDGAMES
+		help
+			driver LCDGAMES
